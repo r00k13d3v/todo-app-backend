@@ -21,7 +21,7 @@ export class Server {
 
     this.api.get("/items/:id", (req, res) => {
       this.itemController.create(req, res);
-    });
+    }); 
 
     this.api.get("/items", (req, res) => {
       this.itemController.getAll(req, res);

@@ -3,9 +3,8 @@ import { Item } from "../domain/Item";
 
 @injectable()
 export class GetItem {
-  constructor() {}
 
-  public async execute(itemId: string): Promise<Item> {
+  public async execute(): Promise<Item> {
     return new Item();
   }
 }
