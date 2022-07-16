@@ -2,16 +2,17 @@ import { inject, injectable } from "inversify";
 import TYPES from "../container.types";
 import { Item } from "./item/domain/Item";
 import { ItemsController } from "./item/infra/ItemsController";
-import express from "express";
+import express, { Application } from "express";
 import { Logger } from "./common/looger";
 
 @injectable()
 export class Server {
-  api = express();
+  private api : Application = express();
+  private PORT = 3000 as number;
 
   constructor(
     @inject(TYPES.Item) private item: Item,
-    @inject(TYPES.ItemsController) private itemController: ItemsController
+    @inject(TYPES.ItemsController) private itemController: ItemsController,
   ) {}
 
   public start(): void {
@@ -27,7 +28,7 @@ export class Server {
       this.itemController.getAll(req, res);
     });
 
-    this.api.listen(3000, () => {
+    this.api.listen(this.PORT, () => {
       Logger.info("Server started on port 3000");
     });
   }
