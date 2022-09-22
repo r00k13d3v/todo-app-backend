@@ -17,7 +17,12 @@ plugins:
   - jekyll-relative-links
 gist:
   noscript: false
-theme: jekyll-theme-architect
+github:
+  zip_url: https://github.com/r00k13d3v/todo-app-backend/archive/refs/heads/main.zip
+  another_url: https://rookiedev.net
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+- jekyll-remote-theme
 markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
