@@ -17,6 +17,7 @@ plugins:
   - jekyll-relative-links
 gist:
   noscript: false
+show_downloads: true
 github:
   zip_url: https://github.com/r00k13d3v/todo-app-backend/archive/refs/heads/main.zip
   another_url: https://rookiedev.net
